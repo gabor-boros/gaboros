@@ -20,3 +20,16 @@
         {{> comment}}
     </main>
 </div>
+
+{{#contentFor "scripts"}}
+<script>
+$(document).ready(function () {
+  // Format code blocks and add line numbers
+  $('pre code').each(function(i, e) {
+    // Code highlight
+    hljs.highlightBlock(e);
+    hljs.lineNumbersBlock(e);
+  });
+});
+</script>
+{{/contentFor}}
